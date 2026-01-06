@@ -1,0 +1,168 @@
+.main {
+  padding: 15px;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+}
+
+.layout {
+  display: flex;
+}
+
+.sidebar {
+  height: 98vh;
+  width: 300px;
+  border-radius: 8px;
+  background-color: rgb(51, 1, 1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  margin-right: 20px;
+  color: white;
+  transition: left 0.3s ease;
+  z-index: 1000;
+}
+
+.content {
+  width: 100%;
+}
+
+.header {
+  height: 70px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  background-color: white;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  gap: 20px;
+  border-radius: 8px;
+}
+
+.body {
+  min-height: calc(100vh - 110px);
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.logo h6 {
+  font-size: 1.5rem;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.menu {
+  margin-top: 50px;
+}
+
+.menu-item {
+  margin-top: 30px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.menu-item a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.menu-item i {
+  font-size: 1.2rem;
+  margin: 0 15px;
+}
+
+.active {
+  background-color: white;
+  border-radius: 5px;
+}
+
+.active a,
+.active i {
+  color: rgb(51, 1, 1);
+}
+
+.hamburger {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+  position: relative;
+  z-index: 2000;
+  color: #333;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.cross {
+  color: white;
+  transform: rotate(180deg);
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 50px;
+  margin-left: auto;
+  margin-right: 15px;
+  gap: 15px;
+}
+
+.header-content i {
+  font-size: 1.2rem;
+}
+
+.header-content a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: blue;
+  text-transform: uppercase;
+  white-space: nowrap;
+  max-width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 768px) {
+  .layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    position: fixed;
+    left: -100%;
+    top: 0;
+    height: 100%;
+    margin-right: 0;
+  }
+
+  .sidebar.show {
+    left: 0;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .main {
+    padding: 12px;
+  }
+
+  .body {
+    min-height: auto;
+    padding: 15px;
+  }
+
+  .header-content i {
+    font-size: 1rem;
+  }
+
+  .header-content a {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-content a {
+    font-size: 0.9rem;
+  }
+}
