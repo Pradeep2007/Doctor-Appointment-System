@@ -17,7 +17,6 @@ app.use("/api/v1/user", require("./routes/userRoutes"));
 app.use("/api/v1/admin", require("./routes/adminRoutes"));
 app.use("/api/v1/doctor", require("./routes/doctorRoutes"));
 
-// ✅ ALWAYS SERVE FRONTEND
 const clientPath = path.join(__dirname, "client", "dist");
 app.use(express.static(clientPath));
 
